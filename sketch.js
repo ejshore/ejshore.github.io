@@ -134,7 +134,7 @@ function newProjectile() {
       end = [getRandomNum(250, 700), 360];
     }
   }
-  
+
   projectiles.push(new Projectile(x, y, x, y, end[0], end[1], calculateStartingVelocity(x, y, end[0], end[1]), false, what, img));
 }
 
@@ -226,7 +226,7 @@ function drawProjectiles() {
     }
   }
 }
-    
+
 function menu() {
   if (deaths == 3) {
     deaths = 0;
@@ -263,11 +263,11 @@ function menu() {
   mn.text("Made by Elliot J.", width/2, height/2.5 + 220);
   image(mn, 0, 0);
 }
-    
-function keyPressed() {
-  toggleMenu();
-}
-    
+
+function keyPressed() { toggleMenu() }
+
+function mouseClicked() { toggleMenu() }
+
 function toggleMenu() {
   if (menuScreen) {
     menuScreen = false;
@@ -307,7 +307,7 @@ function drawHolden() {
   image(holden.img, holden.x, holden.y, 100, 120);
   catching = false;
 }
-    
+
 function drawDeaths() {
   fill(255, 0, 0);
   textSize(40);
@@ -327,7 +327,7 @@ function drawDeaths() {
     toggleMenu();
   }
 }
-    
+
 function draw() {
   background(bg);
   if (!menuScreen) {
