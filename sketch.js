@@ -355,15 +355,13 @@ function draw() {
     textStyle(BOLD);
     textAlign(LEFT, CENTER);
     text("Points: " + str(score), 20, 30);
+    drawDeaths();
     drawHolden();
-    // Draw All Projectiles
     if (!one) {
       newProjectile();
       one = true;
     }
     drawProjectiles();
-    // Show Deaths
-    drawDeaths();
   } else {
     menu();
   }
