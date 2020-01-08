@@ -309,9 +309,16 @@ function drawHolden() {
   } else {
     holden.img = holdenLeft;
   }
-  if (dead.length > 0) {
+  let nvm = false;
+  for (const proj of dead) {
+      if (proj.what == "rock") {
+          nvm = true;
+      }
+  }
+  if (dead.length > 0 && !nvm)) {
     holden.img = holdenCryLeft;
   }
+  nvm = false;
   changeVelocity();
   if (holden.x + velocity > 176 && holden.x + velocity <= 700) {
     holden.x += velocity;
