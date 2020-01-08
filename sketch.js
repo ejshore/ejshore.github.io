@@ -252,7 +252,7 @@ function menu() {
   mn.text("2. The more points you get, the faster kids jump.", width/2, height/2.5);
   mn.text("3. Every time a kid dies or you get hit by a rock,", width/2, height/2.5 + 40);
   mn.text("you get 1 death. If you get 3 deaths you lose.", width/2, height/2.5 + 80);
-  mn.text("4. If you catch a duck the speed resets.", width/2, height/2.5 + 120);
+  mn.text("4. If you catch a duck you lose a death and everything slows down.", width/2, height/2.5 + 120);
   mn.textSize(50);
   mn.text("Points: " + end_score + " Top: " + most, width/2, height/2.5 + 170);
   mn.textSize(30);
