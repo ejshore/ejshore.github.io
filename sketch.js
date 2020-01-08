@@ -268,6 +268,10 @@ function keyPressed() { toggleMenu() }
 
 function mouseClicked() { toggleMenu() }
 
+function mousePressed() { toggleMenu() }
+
+function mouseReleased() { toggleMenu() }
+
 function toggleMenu() {
   if (menuScreen) {
     menuScreen = false;
