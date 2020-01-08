@@ -30,6 +30,7 @@ let menuScreen = false;
 let score = 0;
 let end_score = 0;
 let catching = false;
+let timeD;
 
 function preload() {
   bg = loadImage('assets/background.png');
@@ -180,7 +181,7 @@ function drawProjectiles() {
       continue;
     }
     if (!projectile.startTime) projectile.startTime = performance.now();
-    const deltaSeconds = (performance.now() - projectile.startTime) / 1000;
+    const deltaSeconds = (timeD - projectile.startTime) / 1000;
     projectile.x = projectile.start_x + projectile.startingVelocity.x * deltaSeconds;
     projectile.y = projectile.start_y + projectile.startingVelocity.y * deltaSeconds + 0.5 * gravity * deltaSeconds ** 2;
     image(projectile.img[0], projectile.x, projectile.y, 100, 120);
@@ -340,6 +341,7 @@ function drawDeaths() {
 }
 
 function draw() {
+  timeD = performance.now();
   background(bg);
   if (!menuScreen) {
     textSize(32);
