@@ -272,9 +272,7 @@ function keyPressed() { toggleMenu() }
 
 function mouseClicked() { toggleMenu() }
 
-function mousePressed() { oneWayMenu(true) }
-
-function mouseReleased() { oneWaymenu(false) }
+function mousePressed() { toggleMenu() }
 
 function toggleMenu() {
   if (menuScreen) {
@@ -282,10 +280,6 @@ function toggleMenu() {
   } else {
     menuScreen = true;
   }
-}
-
-function oneWayMenu(enabled) {
-    menuScreen = enabled;
 }
 
 function drawHolden() {
