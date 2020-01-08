@@ -173,7 +173,6 @@ function drawProjectiles() {
       projectile.y = 360;
       dead.push(projectile);
       deaths++;
-      safeUp.push(projectile);
       projectiles = projectiles.filter(function(el) { return el != projectile; });
       continue;
     }
@@ -208,7 +207,7 @@ function drawProjectiles() {
     }
   }
   for (const kid of dead) {
-    if (kid.y >= 910) {
+    if (kid.y >= 510) {
       dead = dead.filter(function(el) { return el != kid; });
       newProjectile();
       continue;
