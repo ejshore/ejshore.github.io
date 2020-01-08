@@ -48,7 +48,8 @@ function preload() {
 
 function setup() {
   mn = createGraphics(width, height);
-  createCanvas(width, height);
+  var canvas = createCanvas(width, height);
+  canvas.parent('sketch-div');
   toggleMenu();
   holden = { x: 400, y: 360, img: holdenLeft };
 }
