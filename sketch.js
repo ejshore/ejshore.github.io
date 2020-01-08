@@ -274,7 +274,7 @@ function mouseClicked() { toggleMenu() }
 
 function mousePressed() { oneWayMenu(true) }
 
-function mouseReleased() { toggleMenu(false) }
+function mouseReleased() { oneWaymenu(false) }
 
 function toggleMenu() {
   if (menuScreen) {
