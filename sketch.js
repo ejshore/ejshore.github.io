@@ -52,7 +52,7 @@ function setup() {
   counter = createGraphics(width, height);
   createCanvas(width, height);
   toggleMenu();
-  holden = { x: 400, y: 360, img: holdenLeft };
+  holden = { x: 400, y: 360, img: holdenLeft, direction: "left" };
 }
 
 function Projectile(x, y, start_x, start_y, end_x, end_y, startingVelocity, splat, what, img) {
@@ -80,6 +80,7 @@ function changeVelocity() {
     } else {
       holden.img = holdenLeft;
     }
+    holden.direction = "left";
   } else if (mouseX > holden.x + 100 && velocity == -10) {
     velocity += 12;
     if (holden.img == holdenCatchLeft || holden.img == holdenCatchLeft) {
@@ -89,6 +90,7 @@ function changeVelocity() {
     } else {
       holden.img = holdenRight;
     }
+    holden.direction = "right";
   } else if (mouseX <= holden.x && velocity > -10) {
     velocity -= 1;
     if (holden.img == holdenCatchLeft || holden.img == holdenCatchRight) {
@@ -98,6 +100,7 @@ function changeVelocity() {
     } else {
       holden.img = holdenLeft;
     }
+    holden.direction = "left";
   } else if (mouseX > holden.x + 100 && velocity < 10) {
     velocity += 1;
     if (holden.img == holdenCatchLeft || holden.img == holdenCatchLeft) {
@@ -107,6 +110,7 @@ function changeVelocity() {
     } else {
       holden.img = holdenRight;
     }
+    holden.direction = "right";
   }
 }
 
@@ -301,7 +305,11 @@ function drawHolden() {
         holden.img = holdenCatchRight;
       }
   } else {
-    holden.img = holdenLeft;
+    if (holden.direction == "left") {
+      holden.img = holdenLeft;
+    } else {
+      holden.img = holdenRight
+    }
   }
   let nvm = false;
   for (const proj of dead) {
