@@ -315,7 +315,7 @@ function drawHolden() {
           nvm = true;
       }
   }
-  if (dead.length > 0 && !nvm)) {
+  if (dead.length > 0 && !nvm) {
     holden.img = holdenCryLeft;
   }
   nvm = false;
