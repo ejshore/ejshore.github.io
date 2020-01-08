@@ -270,8 +270,6 @@ function menu() {
 
 function keyPressed() { toggleMenu() }
 
-function mouseClicked() { toggleMenu() }
-
 function mousePressed() { toggleMenu() }
 
 function toggleMenu() {
