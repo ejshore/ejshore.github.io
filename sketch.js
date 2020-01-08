@@ -162,6 +162,9 @@ function drawProjectiles() {
       if (projectile.what == 'duck') {
         safe_vel = 3;
         die_vel = 3;
+        if (deaths > 0) {
+          deaths -= 1;
+        }
       } else {
         safe_vel += 0.5;
         die_vel += 0.1;
@@ -252,10 +255,15 @@ function menu() {
   mn.text("2. The more points you get, the faster kids jump.", width/2, height/2.5);
   mn.text("3. Every time a kid dies or you get hit by a rock,", width/2, height/2.5 + 40);
   mn.text("you get 1 death. If you get 3 deaths you lose.", width/2, height/2.5 + 80);
-  mn.text("4. If you catch a duck you lose a death and everything slows down.", width/2, height/2.5 + 120);
-  mn.textSize(50);
-  mn.text("Points: " + end_score + " Top: " + most, width/2, height/2.5 + 170);
-  mn.textSize(30);
+  mn.text("4. If you catch a duck you lose a death", width/2, height/2.5 + 120);
+  mn.text("and everything slows down.", width/2, height/2.5 + 160)
+  mn.textSize(40);
+  mn.textAlign(LEFT, CENTER);
+  mn.text("Points: " + end_score, width/2 - 300, height/2.5 + 218);
+  mn.textAlign(RIGHT, CENTER);
+  mn.text("Top: " + most, width/2 + 240, height/2.5 + 218);
+  mn.textSize(25);
+  mn.textAlign(CENTER, CENTER);
   mn.text("Made by Elliot J.", width/2, height/2.5 + 220);
   image(mn, 0, 0);
 }
