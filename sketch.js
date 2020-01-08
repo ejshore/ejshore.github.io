@@ -171,12 +171,9 @@ function drawProjectiles() {
       continue;
     } else if (projectile.y >= 360) {
       projectile.y = 360;
-      if (!(projectile.what == 'rock' || projectile.what == 'duck')) {
-        dead.push(projectile);
-        deaths++;
-      } else {
-        safeUp.push(projectile);
-      }
+      dead.push(projectile);
+      deaths++;
+      safeUp.push(projectile);
       projectiles = projectiles.filter(function(el) { return el != projectile; });
       continue;
     }
