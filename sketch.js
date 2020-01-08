@@ -175,7 +175,7 @@ function drawProjectiles() {
     } else if (projectile.y >= 360) {
       projectile.y = 360;
       dead.push(projectile);
-      deaths++;
+      if (projectile.what == "kid") deaths ++;
       projectiles = projectiles.filter(function(el) { return el != projectile; });
       continue;
     }
